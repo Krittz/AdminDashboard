@@ -17,16 +17,17 @@
             <img src="{{ asset('img/bg.svg') }}" alt="#">
         </div>
         <div class="login-content">
-            <form action="#">
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
                 <img src="{{ asset('img/avatar.svg') }}" alt="#">
                 <h2 class="title">Entrar</h2>
                 <div class="input-div one">
                     <div class="i">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-envelope"></i>
                     </div>
                     <div class="div">
-                        <h5>Username</h5>
-                        <input type="text" name="username" id="username" class="input">
+                        <h5>Email</h5>
+                        <input type="email" name="email" id="email" class="input">
                     </div>
                 </div>
                 <div class="input-div pass">

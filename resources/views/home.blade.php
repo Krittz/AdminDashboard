@@ -146,8 +146,9 @@
 
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>Reza</b></p>
-                        <small class="text-muted">Admin</small>
+                        @auth
+                            <p>Hey, <b>{{ Auth::user()->name }}</b></p>
+                        @endauth
                     </div>
                     <div class="profile-photo">
                         <img src="#">

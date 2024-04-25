@@ -66,7 +66,12 @@
         </span>
         <h3>New Login</h3>
     </a>
-    <a href="#">
+    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit" style="display: none;"></button>
+    </form>
+    
+    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <span class="material-icons-sharp">
             logout
         </span>
