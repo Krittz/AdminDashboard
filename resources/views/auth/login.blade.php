@@ -19,7 +19,7 @@
         <div class="login-content">
             <form action="#">
                 <img src="{{ asset('img/avatar.svg') }}" alt="#">
-                <h2 class="title">Bem Vindo(a)</h2>
+                <h2 class="title">Entrar</h2>
                 <div class="input-div one">
                     <div class="i">
                         <i class="fas fa-user"></i>
@@ -36,8 +36,8 @@
                         <input type="password" name="password" id="password" class="input">
                     </div>
                 </div>
-                <a href="#">Esqueceu sua senha?</a>
-                <input type="submit" value="Login" class="btn">
+                <a href="{{ route('signup') }}">Não possui conta?</a>
+                <input type="submit" value="Entrar" class="btn">
             </form>
         </div>
     </div>
