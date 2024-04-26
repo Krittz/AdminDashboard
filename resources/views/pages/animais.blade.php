@@ -15,30 +15,40 @@
 <body>
 
     <div class="container">
-        <!-- Sidebar Section -->
-        <aside>
-            @include('layout.sidebar')
-        </aside>
-        <!-- End of Sidebar Section -->
-
-        <!-- Main Content -->
-        <main>
-            <h1>Animais</h1>
-
-            @include('layout.table', [
-                'tableTitle' => $tableTitle,
-                'tableHeaders' => $tableHeaders,
-                'tableData' => $tableData,
-            ])
 
 
+        @include('includes.sidebar')
+        <div class="content">
 
-        </main>
+            @include('includes.nav')
+            <main>
+                {{-- Header --}}
 
-        {{-- Nav --}}
-        @include('layout.nav')
+                @include('includes.header', [
+                    'pageTitle' => 'Animais',
+                    'pageDescript' => 'Animais',
+                    'pageRedescript' => 'Lista',
+                ])
+                {{-- //Header --}}
 
-        <script src="{{ asset('js/index.js') }}"></script>
+
+                @include('includes.table', [
+                    'tableTitle' => $tableTitle,
+                    'tableHeaders' => $tableHeaders,
+                    'tableData' => $tableData,
+                ])
+            </main>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <script src="{{ asset('js/index.js') }}"></script>
 </body>
+
 
 </html>

@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     {{-- Styles --}}
     @yield('css')
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
 </head>

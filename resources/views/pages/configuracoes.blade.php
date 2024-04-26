@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-@section('title', 'Início | CrAn')
+@section('title', 'Animais | CrAn')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />

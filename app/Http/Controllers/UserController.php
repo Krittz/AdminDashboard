@@ -51,6 +51,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|string|min:8|confirmed', // O campo password_confirmation é validado automaticamente
+
         ]);
 
         try {
@@ -71,9 +72,16 @@ class UserController extends Controller
             return redirect()->back()->withErrors(['error' => 'Erro ao cadastrar usuário. Por favor, tente novamente.']);
         }
     }
+
+
+
     public function logout()
     {
         Auth::logout();
         return redirect('/login');
     }
+
+
+
+  
 }

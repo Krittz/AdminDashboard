@@ -41,3 +41,7 @@ Route::post('/signup', [UserController::class, 'store']);
 Route::get('/animais', [AnimaisController::class, 'index'])
     ->middleware('auth')
     ->name('animais');
+
+Route::get('/configs', function () {
+    return view('pages.configuracoes');
+})->middleware('auth')->name('configs');
