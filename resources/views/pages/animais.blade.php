@@ -5,12 +5,16 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
 @endsection
 @section('js')
     <script src="{{ asset('js/script.js') }}"></script>
+
 @endsection
 
+
 @include('includes.head')
+
 
 <body>
 
@@ -38,6 +42,7 @@
                     'tableData' => $tableData,
                 ])
                 {{-- //Table --}}
+
             </main>
         </div>
 
