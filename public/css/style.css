@@ -536,59 +536,30 @@ main .recent-orders a{
 }
 
 @media screen and (max-width: 1200px) {
-    .container{
+    .container {
         width: 95%;
         grid-template-columns: 7rem auto 23rem;
     }
 
-    aside .logo h2{
-        display: none;
+    /* Ajuste a largura máxima da tabela */
+    main .recent-orders table {
+        width: 100%;
+        max-width: 100%;
     }
 
-    aside .sidebar h3{
-        display: none;
-    }
-
-    aside .sidebar a{
-        width: 5.6rem;
-    }
-
-    aside .sidebar a:last-child{
-        position: relative;
-        margin-top: 1.8rem;
-    }
-
-    main .analyse{
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    main .new-users .user-list .user{
-        flex-basis: 40%;
-    }
-
-    main .recent-orders {
-        width: 94%;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 2rem 0 0 0.8rem;
-    }
-
-    main .recent-orders table{
-        width: 83vw;
-    }
-
+    /* Ocultar as primeiras e últimas células */
+    main table thead tr th:first-child,
+    main table tbody tr td:first-child,
     main table thead tr th:last-child,
-    main table thead tr th:first-child{
+    main table tbody tr td:last-child {
         display: none;
     }
 
-    main table tbody tr td:last-child,
-    main table tbody tr td:first-child{
-        display: none;
+    /* Ajuste do layout das células */
+    main table tbody tr td {
+        padding: 0.5rem;
+        word-break: break-word; /* Quebra de linha para conteúdo longo */
     }
-
 }
 
 @media screen and (max-width: 768px) {

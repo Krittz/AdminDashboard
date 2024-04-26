@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('producao', function (Blueprint $table) {
+        Schema::create('producoes', function (Blueprint $table) {
             $table->id();
             $table->date('data');
-            $table->decimal('litros_manha', 10,2);
-            $table->decimal('litros_tarde',10,2);
+            $table->decimal('litros_manha', 10, 2);
+            $table->decimal('litros_tarde', 10, 2);
             $table->string('observacoes')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Relacionamento com o usuário
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('producao');
+        Schema::dropIfExists('producoes');
     }
 };

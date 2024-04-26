@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('animal', function (Blueprint $table) {
+        Schema::create('animals', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->string('especie');
@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('pai_nome')->nullable();
             $table->string('observacoes')->nullable();
             $table->enum('prenhez', ['sim', 'nao'])->default('nao');
+            $table->binary('photo')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Relacionamento com o usuário
             $table->timestamps();
         });
     }
@@ -36,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('animal');
+        Schema::dropIfExists('animals');
     }
 };

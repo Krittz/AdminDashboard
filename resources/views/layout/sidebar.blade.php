@@ -11,66 +11,55 @@
 </div>
 
 <div class="sidebar">
-    <a href="#">
+    <a href="{{ route('home') }}">
         <span class="material-icons-sharp">
             dashboard
         </span>
-        <h3>Dashboard</h3>
+        <h3>Painel</h3>
+    </a>
+    <a href="{{ route('animais') }}">
+        <span class="material-icons-sharp">
+            pets
+        </span>
+        <h3>Animais</h3>
     </a>
     <a href="#">
         <span class="material-icons-sharp">
-            person_outline
+            local_drink
         </span>
-        <h3>Users</h3>
+        <h3>Produção</h3>
     </a>
     <a href="#">
         <span class="material-icons-sharp">
-            receipt_long
+            article
         </span>
-        <h3>History</h3>
-    </a>
-    <a href="#" class="active">
-        <span class="material-icons-sharp">
-            insights
-        </span>
-        <h3>Analytics</h3>
+        <h3>Relatórios</h3>
     </a>
     <a href="#">
         <span class="material-icons-sharp">
-            mail_outline
+            shopping_cart
         </span>
-        <h3>Tickets</h3>
-        <span class="message-count">27</span>
+        <h3>Compras</h3>
     </a>
     <a href="#">
         <span class="material-icons-sharp">
             inventory
         </span>
-        <h3>Sale List</h3>
+        <h3>Orçamentos</h3>
     </a>
-    <a href="#">
-        <span class="material-icons-sharp">
-            report_gmailerrorred
-        </span>
-        <h3>Reports</h3>
-    </a>
+
     <a href="#">
         <span class="material-icons-sharp">
             settings
         </span>
-        <h3>Settings</h3>
+        <h3>Configurações</h3>
     </a>
-    <a href="#">
-        <span class="material-icons-sharp">
-            add
-        </span>
-        <h3>New Login</h3>
-    </a>
+
     <form id="logout-form" action="{{ route('logout') }}" method="POST">
         @csrf
         <button type="submit" style="display: none;"></button>
     </form>
-    
+
     <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <span class="material-icons-sharp">
             logout
