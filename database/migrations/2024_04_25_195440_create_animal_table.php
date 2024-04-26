@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('especie');
             $table->string('raca')->nullable();
             $table->enum('sexo', ['macho', 'femea']);
-            $table->date('data_nascimento');
-            $table->date('data_aquisicao');
+            $table->date('data_nascimento')->nullable();
+            $table->date('data_aquisicao')->nullable();
             $table->date('data_venda')->nullable();
-            $table->decimal('custo_aquisicao', 10, 2);
+            $table->decimal('custo_aquisicao', 10, 2)->nullable();
             $table->decimal('preco_venda', 10, 2)->nullable();
             $table->enum('status', ['solteiro', 'em_producao', 'vendido']);
             $table->string('mae_nome')->nullable();
