@@ -31,12 +31,13 @@
                 ])
                 {{-- //Header --}}
 
-
+                {{-- Table --}}
                 @include('includes.table', [
                     'tableTitle' => $tableTitle,
                     'tableHeaders' => $tableHeaders,
                     'tableData' => $tableData,
                 ])
+                {{-- //Table --}}
             </main>
         </div>
 

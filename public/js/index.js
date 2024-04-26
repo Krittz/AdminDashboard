@@ -1,8 +1,11 @@
-const sideLinks = document.querySelectorAll(
-    ".sidebar .side-menu li a:not(.logout)"
-);
 const menuBar = document.querySelector(".content nav .bx.bx-menu");
 const sideBar = document.querySelector(".sidebar");
+const menuIcon = document.querySelector(".bx.bx-menu");
+
+menuBar.addEventListener("click", () => {
+    sideBar.classList.toggle("close");
+});
+
 const searchBtn = document.querySelector(
     ".content nav form .form-input button"
 );
@@ -10,12 +13,6 @@ const searchBtnIcon = document.querySelector(
     ".content nav form .form-input button .bx"
 );
 const searchForm = document.querySelector(".content nav form");
-const toggler = document.getElementById("theme-toggle");
-
-menuBar.addEventListener("click", () => {
-    sideBar.classList.toggle("close");
-});
-
 searchBtn.addEventListener("click", function (e) {
     if (window.innerWidth < 576) {
         e.preventDefault;
@@ -34,25 +31,25 @@ window.addEventListener("resize", () => {
     } else {
         sideBar.classList.remove("close");
     }
+
     if (window.innerWidth > 576) {
         searchBtnIcon.classList.replace("bx-x", "bx-search");
         searchForm.classList.remove("show");
     }
 });
+const toggler = document.getElementById("theme-toggle");
+const isDarkMode = localStorage.getItem("darkMode");
 
-const currentTheme = localStorage.getItem("theme");
-
-if (currentTheme === "dark") {
-    toggler.checked = true;
+if (isDarkMode === "true") {
     document.body.classList.add("dark");
+    toggler.checked = true;
 }
-
 toggler.addEventListener("change", function () {
     if (this.checked) {
-        localStorage.setItem("theme", "dark");
         document.body.classList.add("dark");
+        localStorage.setItem("darkMode", "true");
     } else {
-        localStorage.setItem("theme", "light");
         document.body.classList.remove("dark");
+        localStorage.setItem("darkMode", false);
     }
 });
